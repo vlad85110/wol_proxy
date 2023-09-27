@@ -4,6 +4,6 @@ project(wol_proxy)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(wol_proxy main.cpp
-        Server.cpp
+        server/Server.cpp
         send_wol.c
-        MagicPacket.cpp)
+        server/MagicPacket.cpp)

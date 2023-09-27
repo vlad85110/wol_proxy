@@ -2,7 +2,7 @@
 // Created by Влад Кирилов on 27.09.2023.
 //
 
-#include "Server.h"
+#include "server/Server.h"
 #include <iostream>
 
 int main() {

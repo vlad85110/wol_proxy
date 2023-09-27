@@ -5,7 +5,7 @@
 #ifndef WOL_SERVER_MAGICPACKET_H
 #define WOL_SERVER_MAGICPACKET_H
 
-#include "types.h"
+#include "../types.h"
 
 struct MagicPacket {
     std::unique_ptr<char[]> payload;

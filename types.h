@@ -5,7 +5,6 @@
 #ifndef WOL_SERVER_TYPES_H
 #define WOL_SERVER_TYPES_H
 
-
 #include <string>
 
 using String = std::string;

@@ -6,7 +6,7 @@
 #define WOL_SERVER_SERVER_H
 
 #include <locale>
-#include "types.h"
+#include "../types.h"
 #include "MagicPacket.h"
 
 class Server {
