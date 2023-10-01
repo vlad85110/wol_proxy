@@ -30,16 +30,15 @@ Server::Server(int port, String sendAddress, const String &macAddress)
           mac_address(macAddress), read_set(), write_set() {
     receive_buffer = std::make_unique<char[]>(1024);
 
-    FD_ZERO(&read_set);
-    FD_ZERO(&write_set);
-}
-
-void Server::run() {
+    //todo исключение в конструкторе, убрать или поймать
     create_listen_socket();
     create_send_socket();
 
     FD_ZERO(&read_set);
     FD_ZERO(&write_set);
+}
+
+void Server::run_proxy() {
     FD_SET(listen_socket, &read_set);
 
     fd_set read_res, write_res;
@@ -70,7 +69,6 @@ void Server::run() {
         }
 
         if (FD_ISSET(send_socket, &write_res)) {
-            std::cerr << 1 ;
             FD_CLR(send_socket, &write_set);
             send_wol();
         }

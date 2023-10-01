@@ -3,7 +3,10 @@ project(wol_proxy)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(wol_proxy main.cpp
+set(SOURCE_FILES main.cpp
         server/Server.cpp
-        send_wol.c
         server/MagicPacket.cpp)
+
+add_executable(wol_proxy ${SOURCE_FILES}
+        C/server.h
+        C/server.c)

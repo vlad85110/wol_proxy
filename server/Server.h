@@ -25,8 +25,6 @@ private:
 
     std::unique_ptr<char[]> receive_buffer;
 
-    void send_wol() const;
-
     String mac_address;
 
     MagicPacket magic_packet;
@@ -34,7 +32,9 @@ private:
 public:
     Server(int port, String sendAddress, const String& macAddress);
 
-    void run();
+    void run_proxy();
+
+    void send_wol() const;
 
     ~Server();
 };
